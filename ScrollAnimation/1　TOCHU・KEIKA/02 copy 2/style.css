@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+body{
+  font-family: serif;
+  background-color: #333;
+  color: #fff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+header{
+  padding: 50px;
+}
+
+header h1{
+  font-size: 70px;
+  font-weight: bold;
+  margin-bottom: 60px;
+  white-space: nowrap;
+}
+
+main{
+  max-width: 1000px;
+  width: 100%;
+  margin: 50px auto;
+}
+/*/(1)ここからがスクロールアニメイションである。
+まず.contents li　において　opacity: 0;で表示を０にし透明にしておく。
+そしてjsでliにスクロールを条件にshowクラスを付け足される。
+そしたら、.contents li.showの要素が.contents liに上書きされて変化する。
+変化するまでの時間は.contents liの　transition: ;　の時間である。
+また変化の仕方は li とli.showのtransformに関係する。
+liで下に50pxずらしておいてshowがついたらものの位置に戻す。
+/*/
+.contents li{
+  position: relative;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s;
+}
+
+.contents li.show{
+  opacity: 1;
+  transform: none;
+}
+/*/(1)ここまで/*/
+
+
+.contents li:not(:first-of-type){
+  margin-top: 200px;
+}
+
+.contents li:nth-of-type(odd) .contentsText{
+  right: 0px ;
+}
+
+.contents li:nth-of-type(even) .contentsText{
+  align-items: flex-start;
+}
+
+.contents li:nth-of-type(even) img{
+  margin-left: auto;
+}
+
+.contentsText{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 40px;
+}
+
+.contents h2{
+  font-size: 50px;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color: rgba(20,20,20, .8);
+  padding: 10px 20px;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  border-radius: 5px;
+}
+
+.contents p {
+  line-height: 1.6;
+  background-color: #555;
+  font-size: 14px;
+  max-width: 340px;
+  padding: 15px;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.contents img{
+  width: 65%;
+  display: block;
+  border-radius: 5px;
+}
+

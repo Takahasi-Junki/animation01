@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Sofia);
+
+.container {
+	position: absolute;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+}
+.stage {
+	background: linear-gradient(270deg, #4CB8C4 10%, #3CD3AD 90%);
+	height: 100%;
+	position: fixed;
+}
+h1 {
+  font-family: 'Sofia', cursive,sans-serif;
+  font-size: 34px;
+  margin-top: 200px;
+}
